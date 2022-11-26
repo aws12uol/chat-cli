@@ -3,7 +3,9 @@ ICC chat cli
 
 ### Prerequisites
 
-- Installing mongodb [installation guide](chapter-1-chat/guidelines/installing-mongo.md)
+- Installing mongodb installation guide
+  - [Windows](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/#procedure)
+  - [Mac](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/#install-homebrew)
 - Connecting to a database
 
 ## Usage
