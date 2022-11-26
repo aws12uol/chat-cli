@@ -1,0 +1,27 @@
+{
+  "name": "chat-cli",
+  "version": "1.0.0",
+  "description": "ICC chat cli",
+  "main": "index.js",
+  "type": "module",
+  "preferGlobal": true,
+  "bin": "./commands.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aws12uol/chat-cli.git"
+  },
+  "author": "Akankasha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aws12uol/chat-cli/issues"
+  },
+  "homepage": "https://github.com/aws12uol/chat-cli#readme",
+  "dependencies": {
+    "commander": "^9.4.1",
+    "inquirer": "^9.1.4",
+    "mongoose": "^6.7.3"
+  }
+}
