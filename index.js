@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import Chat from './models/chats.js'
+const mongoose = require("mongoose");
+const Chat = require("./models/chats")
 
 
 // Connect to db
@@ -20,13 +20,14 @@ const addMessage = (msg) => {
 const findMessage = (msg) => {
   // Make case insensitive
   const search = new RegExp(msg, 'i');
-  Customer.find({$or: [{message: search}]})
+  Chat.find({$or: [{message: search}]})
     .then(messages => {
       console.info(messages);
       console.info(`${messages.length} matches`);
       mongoose.connection.close();
     });
 }
+
 
 
 // List Customers
@@ -39,7 +40,7 @@ const listMessages = () => {
     });
 }
 
-export {
+module.exports = {
   addMessage,
   findMessage,
   listMessages

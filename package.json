@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "ICC chat cli",
   "main": "index.js",
-  "type": "module",
   "preferGlobal": true,
   "bin": "./commands.js",
   "scripts": {
@@ -22,6 +21,8 @@
   "dependencies": {
     "commander": "^9.4.1",
     "inquirer": "^9.1.4",
-    "mongoose": "^6.7.3"
+    "mongoose": "^6.7.3",
+    "socket.io": "^4.5.4",
+    "socket.io-client": "^4.5.4"
   }
 }
