@@ -23,14 +23,14 @@ ICC chat cli
 ```
 
 ### Commands
-- List Messages (list or l)
+- Run server
 
-  - $ chat-cli list
+  - cd server
 
-- Find a message (find or f)
+  - node server.js
 
-  - $ chat-cli find [msg]
+- Run client
 
-- Add Message (add or a)
+  - cd client
 
-  - $ chat-cli add
+  - node client.js

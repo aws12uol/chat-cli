@@ -9,28 +9,31 @@ mongoose.connect('mongodb+srv://root:admin@cluster0.dnptdyb.mongodb.net/?retryWr
 });
 
 // Add Message
-const addMessage = (msg) => {
-  Chat.create(msg).then(msg => {
-    console.info('Message Added');
+const addMessage = async (msg) => {
+  return await Chat.create(msg).then(message => {
+    console.info('Message Added to DB');
     mongoose.connection.close();
+    return message._id;
   });
 }
 
-// Find 
-const findMessage = (msg) => {
-  // Make case insensitive
-  const search = new RegExp(msg, 'i');
-  Chat.find({$or: [{message: search}]})
+
+const findMessage = async (id) => {
+  return await Chat.findById(id)
     .then(messages => {
+      console.info('Message fetched from DB');
       console.info(messages);
-      console.info(`${messages.length} matches`);
       mongoose.connection.close();
+      return {
+        message: messages.message,
+        sender: messages.sender,
+        date: messages.date
+      }
     });
 }
 
 
-
-// List Customers
+// List messages
 const listMessages = () => {
   Chat.find()
     .then(messages => {
@@ -40,8 +43,19 @@ const listMessages = () => {
     });
 }
 
+// Remove messages
+const removeMessage = (_id) => {
+  Chat.deleteOne({_id} )
+    .then(msg => {
+      console.info('message Removed');
+      mongoose.connection.close();
+    });
+}
+
+
 module.exports = {
   addMessage,
   findMessage,
-  listMessages
+  listMessages,
+  removeMessage
 }
